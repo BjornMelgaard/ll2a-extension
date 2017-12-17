@@ -1,0 +1,49 @@
+{
+  "presets": [
+    ["@babel/env", {
+      "targets": {
+        "browsers": "last 2 Chrome versions"
+      }
+    }],
+    "@babel/react"
+  ],
+  "plugins": [
+    "@babel/plugin-external-helpers",
+    "css-to-js",
+    "@babel/transform-runtime",
+    ["@babel/plugin-proposal-object-rest-spread"],
+    ["babel-plugin-root-import", {
+      "rootPathSuffix": "."
+    }],
+    ["lodash", {
+      "id": ["ramda", "ramda-adjunct", "recompose"]
+    }],
+    // TODO: use https://webpack.js.org/guides/tree-shaking/ instead
+    ["direct-import", { "modules": ["material-ui"] }]
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        ["@babel/react", {
+          "development": true
+        }],
+      ],
+      "plugins": [ "react-hot-loader/babel" ]
+    },
+    "production": {
+      "presets": [
+        ["@babel/env", {
+          "targets": {
+            "browsers": "last 2 Chrome versions",
+            "forceAllTransforms": true
+          }
+        }],
+      ],
+      "plugins": [
+        // TODO: fix babel-preset-react-optimize to support babel 7
+        "@babel/plugin-transform-react-constant-elements",
+        "@babel/plugin-transform-react-inline-elements"
+      ]
+    }
+  }
+}

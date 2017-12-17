@@ -1,0 +1,21 @@
+{
+  "presets": [
+    ["env", {
+      "debug": false,
+      "modules": "commonjs",
+      "targets": {
+        "node": "current"
+      },
+      "useBuiltIns": true,
+      "externalHelpers": true
+    }]
+  ],
+  "plugins": [
+    ["babel-plugin-root-import", {
+      "rootPathSuffix": "src"
+    }],
+    ["lodash", {
+      "id": ["ramda", "ramda-adjunct", "recompose", "@ll2a/metalib"]
+    }]
+  ]
+}
