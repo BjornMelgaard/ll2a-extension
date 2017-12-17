@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
 
-import rootReducer from '~/src/entries/options/reducers'
+import rootReducer from '~/src/entries/popup/reducers'
 
 import epicMiddleware from './lib/epicMiddleware'
 import wrapWithLogger from './lib/wrapWithLogger'

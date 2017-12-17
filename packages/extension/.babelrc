@@ -12,6 +12,7 @@
     "css-to-js",
     "@babel/transform-runtime",
     ["@babel/plugin-proposal-object-rest-spread"],
+    "babel-plugin-rxjs",
     ["babel-plugin-root-import", {
       "rootPathSuffix": "."
     }],

@@ -27,7 +27,7 @@ export default [
           // see extractSass.js
           css: env([], ['inject.css']),
           js: ['inject.js'],
-          run_at: 'document_start',
+          run_at: 'document_end',
         },
       ],
       icons: {
@@ -35,12 +35,10 @@ export default [
         48:  'icons/icon-48.png',
         128: 'icons/icon-128.png',
       },
-      background: {
-        scripts: ['background.js'],
-        persistent: false,
+      "browser_action": {
+        "default_popup": "popup.html",
       },
-      options_page: 'options.html',
-      permissions: ['tabs', 'storage'],
+      permissions: ['tabs', "<all_urls>", 'storage'],
       content_security_policy: contentSecurityPolicy,
 
       // key is used to make extension id deterministic

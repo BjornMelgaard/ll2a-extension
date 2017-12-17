@@ -1,7 +1,7 @@
 // import lingualeo from '@ll2a/lingualeo-api'
 
-import Root from '~/src/entries/options/containers/Root'
-import createStore from '~/src/entries/options/store/configureStore'
+import Root from '~/src/entries/popup/containers/Root'
+import createStore from '~/src/entries/popup/store/configureStore'
 
 import getSavedState from '~/src/utils/getSavedState'
 

@@ -5,8 +5,8 @@ import { root } from '~/webpack/lib'
 
 export default [
   new HtmlWebpackPlugin({
-    template: join(root, 'src/entries/options/index.pug'),
-    chunks:   ['options'],
-    filename: 'options.html',
+    template: join(root, 'src/entries/popup/index.pug'),
+    chunks:   ['popup'],
+    filename: 'popup.html',
   }),
 ]

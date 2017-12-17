@@ -17,9 +17,8 @@ const sharedEntries = env(devEntries, prodEntries)
 export default {
   devtool: env('inline-source-map', false),
   entry:   {
-    options:    [...sharedEntries, join(root, 'src/entries/options')],
-    inject:     [...sharedEntries, join(root, 'src/entries/inject')],
-    background: [...sharedEntries, join(root, 'src/entries/background')],
+    popup:  [...sharedEntries, join(root, 'src/entries/popup')],
+    inject: [join(root, 'src/entries/inject')],
   },
   output: {
     path:          outputDir,
