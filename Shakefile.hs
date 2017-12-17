@@ -15,8 +15,8 @@ import Control.Monad
 import Turtle (ls)
 
 yarnRun :: String -> FilePath -> Action ()
--- yarnRun c dir = cmd_ (Cwd dir) Shell ("/home/bjorn/.node_modules/bin/yarn run " ++ c)
-yarnRun c dir = cmd_ (Cwd dir) Shell ("echo $PATH | tr ':' '\n'")
+yarnRun c dir = cmd_ (Cwd dir) Shell (AddPath paths []) ("yarn run " ++ c)
+  where paths = ["/run/current-system/sw/bin", "/home/bjorn/.node_modules/bin/yarn"]
 
 getDirectoryDirsFullPath :: FilePath -> Action [FilePath]
 getDirectoryDirsFullPath relDir = do
