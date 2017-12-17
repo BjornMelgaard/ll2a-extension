@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid } from 'material-ui'
-import Modal from '~/app/containers/Modal'
+import Modal from '~/src/entries/options/containers/Modal'
 
 const AppWrapper = ({ classes, children }) => (
   <Grid container classes={{ typeContainer: classes.root_container_overwrite }}>

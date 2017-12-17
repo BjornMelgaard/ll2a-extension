@@ -5,13 +5,8 @@ import { root } from '~/webpack/lib'
 
 export default [
   new HtmlWebpackPlugin({
-    template: join(root, 'chrome/views/popup.pug'),
-    chunks:   ['popup'],
-    filename: 'popup.html',
-  }),
-  new HtmlWebpackPlugin({
-    template: join(root, 'chrome/views/background.pug'),
-    chunks:   ['background'],
-    filename: 'background.html',
+    template: join(root, 'src/entries/options/index.pug'),
+    chunks:   ['options'],
+    filename: 'options.html',
   }),
 ]

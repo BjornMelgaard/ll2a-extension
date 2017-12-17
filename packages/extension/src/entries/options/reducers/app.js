@@ -1,6 +1,6 @@
 import * as R from 'ramda'
 import { createReducer, stateSetter } from '@ll2a/metalib'
-import * as a from '~/app/actions/app'
+import * as a from '~/src/entries/options/actions/app'
 
 const initialState = {
   error: null,

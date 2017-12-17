@@ -3,8 +3,8 @@ import * as RE from 'recompose'
 import { connect } from 'react-redux'
 import { isPropEmpty, mapSelectors, wrapWithComponent } from '@ll2a/metalib'
 
-import * as currentUserSelectors from '~/app/selectors/currentUser'
-import * as appSelectors from '~/app/selectors/app'
+import * as currentUserSelectors from '~/src/entries/options/selectors/currentUser'
+import * as appSelectors from '~/src/entries/options/selectors/app'
 
 import Default from './default'
 import Loading from './loading'

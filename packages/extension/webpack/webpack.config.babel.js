@@ -23,7 +23,7 @@ export default {
   },
   output: {
     path:          outputDir,
-    filename:      '[name].bundle.js',
+    filename:      '[name].js',
     chunkFilename: '[id].chunk.js',
   },
   devServer: {

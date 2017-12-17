@@ -1,6 +1,10 @@
 .DEFAULT_GOAL := crx
 
 #############################
+dev:
+	cd packages/extension && yarn run dev
+
+#############################
 lingualeo-api:
 	cd packages/lingualeo-api && yarn run build
 metalib:

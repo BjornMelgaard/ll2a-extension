@@ -1,10 +1,10 @@
 import React from 'react'
 import { Grid } from 'material-ui'
 
-import ExitButton from '~/app/containers/ExitButton'
-import CreateStoryForm from '~/app/containers/CreateStoryForm'
-import UserInfo from '~/app/containers/UserInfo'
-import StoryPreview from '~/app/containers/StoryPreview'
+import ExitButton from '~/src/entries/options/containers/ExitButton'
+import CreateStoryForm from '~/src/entries/options/containers/CreateStoryForm'
+import UserInfo from '~/src/entries/options/containers/UserInfo'
+import StoryPreview from '~/src/entries/options/containers/StoryPreview'
 
 const AppDefault = ({ classes }) => (
   <Grid

@@ -1,10 +1,9 @@
 // import lingualeo from '@ll2a/lingualeo-api'
 
-import getSavedState from '~/chrome/shared/getSavedState'
+import Root from '~/src/entries/options/containers/Root'
+import createStore from '~/src/entries/options/store/configureStore'
 
-import Root from '~/app/containers/Root'
-import * as appActions from '~/app/actions/app'
-import createStore from '~/app/store/configureStore'
+import getSavedState from '~/src/utils/getSavedState'
 
 import render from './render'
 
@@ -12,9 +11,9 @@ import './index.scss'
 
 function hmrWatch(onNext) {
   if (module.hot) {
-    module.hot.accept('../../../app/containers/Root/index.js', () => {
+    module.hot.accept('./containers/Root/index.js', () => {
       // eslint-disable-next-line import/no-dynamic-require, global-require
-      const smthNext = require('../../../app/containers/Root/index.js').default
+      const smthNext = require('./containers/Root/index.js').default
       onNext(smthNext)
     })
   }

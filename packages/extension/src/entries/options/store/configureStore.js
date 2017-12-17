@@ -1,15 +1,14 @@
 import { createStore, applyMiddleware } from 'redux'
 
-import rootReducer from '~/app/reducers'
+import rootReducer from '~/src/entries/options/reducers'
 
-import logicMiddleware from './lib/logicMiddleware'
+import epicMiddleware from './lib/epicMiddleware'
 import wrapWithLogger from './lib/wrapWithLogger'
 
 const isProd = process.env.NODE_ENV === 'production'
-// const isProd = true
 
 export default function configureStore(initialState) {
-  const middlewares = [logicMiddleware]
+  const middlewares = [epicMiddleware]
 
   const reducer = isProd ? rootReducer : wrapWithLogger(rootReducer)
 

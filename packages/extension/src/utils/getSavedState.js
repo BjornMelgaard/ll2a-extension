@@ -1,5 +1,5 @@
 import { assertType } from 'ramda-asserters'
-import chromep from '~/chrome/shared/chromep'
+import chromep from '~/src/chromep'
 
 async function getSavedState() {
   const state = await chromep.storage.local.get('state')

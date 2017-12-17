@@ -3,10 +3,12 @@ import webpack from 'webpack'
 const prod = [
   new webpack.optimize.OccurrenceOrderPlugin(),
 
-  new webpack.IgnorePlugin(/[^/]+\/[\S]+.dev$/),
+  // TODO: do I need them?
+  // new webpack.IgnorePlugin(/[^/]+\/[\S]+.dev$/),
 
   // XXX: throws error without @babel/env.forceAllTransforms in .babelrc
   new webpack.optimize.UglifyJsPlugin({
+    // TODO: ecma 8 has no effect, still error on prod build
     ecma:       8, // ECMAScript Version
     parallel:   true,
     comments:   false,

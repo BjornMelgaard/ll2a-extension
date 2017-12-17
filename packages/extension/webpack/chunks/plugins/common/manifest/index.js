@@ -1,7 +1,7 @@
 import { join } from 'path'
 import WriteJsonPlugin from 'write-json-webpack-plugin'
 
-import { root } from '~/webpack/lib'
+import { root, env } from '~/webpack/lib'
 import contentSecurityPolicy from './contentSecurityPolicy'
 
 const pkg = require(join(root, 'package.json'))
@@ -9,21 +9,25 @@ const pkg = require(join(root, 'package.json'))
 export default [
   new WriteJsonPlugin({
     filename: 'manifest.json',
-    pretty:   true,
-    object:   {
+    pretty: true,
+    object: {
       manifest_version: 2,
-      version:          pkg.version,
-      name:             pkg['extension-name'],
-      description:      pkg.description,
-      homepage_url:     pkg.repository.url,
-      default_locale:   'en',
-      content_scripts:  [
+      version: pkg.version,
+      name: pkg['extension-name'],
+      description: pkg.description,
+      homepage_url: pkg.repository.url,
+      // TODO
+      // default_locale:   'en',
+      content_scripts: [
         {
           all_frames: true,
-          matches:    ['<all_urls>'],
-          css:        ['inject.css'],
-          js:         ['inject.js'],
-          run_at:     'document_start',
+          matches: ['<all_urls>'],
+          // XXX:
+          // use ExtractTextPlugin if environment is production
+          // see extractSass.js
+          css: env([], ['inject.css']),
+          js: ['inject.js'],
+          run_at: 'document_start',
         },
       ],
       icons: {
@@ -31,7 +35,12 @@ export default [
         48:  'icons/icon-48.png',
         128: 'icons/icon-128.png',
       },
-      permissions:             ['tabs', 'storage', 'notifications', 'contextMenus'],
+      background: {
+        scripts: ['background.js'],
+        persistent: false,
+      },
+      options_page: 'options.html',
+      permissions: ['tabs', 'storage'],
       content_security_policy: contentSecurityPolicy,
 
       // key is used to make extension id deterministic

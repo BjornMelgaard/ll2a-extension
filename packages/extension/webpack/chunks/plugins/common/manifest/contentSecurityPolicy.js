@@ -7,6 +7,7 @@ const devPort = process.env.WEBPACK_DEV_SERVER_PORT
 
 const hmrHttpHost = `http://localhost:${devPort}`
 const hmrWsHost = `ws://localhost:${devPort}`
+const materialiconsFontsHost = 'https://fonts.gstatic.com'
 const self = "'self'"
 const blob = 'blob:'
 const unsafeEval = "'unsafe-eval'"
@@ -14,9 +15,9 @@ const unsafeInline = "'unsafe-inline'"
 const allGlob = '*'
 
 const prodContentSecurityPolicy = {
-  'default-src': [self],
+  'default-src': [self, materialiconsFontsHost],
   'script-src':  [self],
-  'connect-src': [apiHttpHost],
+  'connect-src': [],
   'style-src':   [allGlob, unsafeInline, blob],
   'img-src':     [allGlob],
 }

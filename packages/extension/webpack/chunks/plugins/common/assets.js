@@ -6,7 +6,7 @@ import extractSass from '~/webpack/extractSass'
 
 export default [
   new CopyWebpackPlugin([
-    { context: join(root, 'chrome/assets'), from: '**', to: outputDir },
+    { context: join(root, 'src/assets'), from: '**', to: outputDir },
   ]),
   extractSass,
 ]
